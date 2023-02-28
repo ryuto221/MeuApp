@@ -2,6 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View } from "react-native";
 import { Button, Text } from "react-native-paper";
+import AboutScreen from "./src/screens/AboutScreen";
+import HomeScreen from "./src/screens/HomeScreen";
 
 export default function App() {
   return (
@@ -16,26 +18,16 @@ function RootNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen 
+          name="HomeScreen" 
+          component={HomeScreen} 
+          options={{
+            
+          }}
+        />
         <Stack.Screen name="AboutScreen" component={AboutScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-function HomeScreen() {
-  return (
-    <View>
-      <Text> Ola seja bem vindo ao meu App</Text>
-      <Button mode="contained">sobre</Button>
-    </View>
-  );
-}
-
-function AboutScreen(){
-  return (
-    <View>
-      <Text>Pagina Sobre</Text>
-    </View>
-  )
-}
